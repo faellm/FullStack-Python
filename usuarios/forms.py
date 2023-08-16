@@ -9,5 +9,6 @@ class CustomUserCreationForm(UserCreationForm):
     telefone = forms.CharField(max_length=9, required=True)
     
     class Meta:
+        
         model = User
-        fields = UserCreationForm.Meta.fields + ('telefone',)
+        fields = UserCreationForm.Meta.fields + ('telefone')
