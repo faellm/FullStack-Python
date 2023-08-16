@@ -15,5 +15,6 @@ def cadastrar_usuario(request):
 
 @login_required
 def painel_controle(request):
+    
     user = request.user
     return render(request, 'usuarios/painel_controle.html', {'user': user})
