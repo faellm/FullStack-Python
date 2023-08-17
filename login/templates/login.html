@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Carregando arquivos CSS usando o template tag static -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<body>
+  <div class="container ">
+    <div class="row px-3">
+      <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
+        <div class="img-left d-none d-md-flex"></div>
+
+        <div class="card-body">
+          
+         <div class="text-center">
+            <img src="{% static 'media/img2.jpg' %}" alt="Banner" width="100%"> 
+        </div> 
+
+          <h4 class="title text-center mt-4">
+           Login
+          </h4>
+          <form class="form-box px-3">
+            <div class="form-input">
+              <span><i class="fa fa-user"></i></span>
+              <input type="text" name="" placeholder="Usuario" minlength="6" tabindex="10" required>
+            </div>
+            <div class="form-input" >
+              <span><i class="fa fa-key"></i></span>
+              <input type="password" name="password" id="password" placeholder="Password" required>
+              <span class="vista"><i>✓</i></span>
+            </div>
+
+           
+
+            <div class="mb-3">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="cb1" name="">
+                <label class="custom-control-label" for="cb1">Lembrar credenciais</label>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <button type="submit" class="btn btn-block text-uppercase">
+                Login
+              </button>
+            </div>
+
+            <div class="text-right">
+              <a href="#" class="forget-link">
+                Recuperar senha?
+              </a>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="text-center mb-2">
+              Não possui registro?
+              <a href="#" class="register-link">
+                Criar conta
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+document.querySelector('.vista').addEventListener('click', e => {
+    const passwordInput = document.querySelector('#password');
+    if (e.target.classList.contains('show')) {
+        e.target.classList.remove('show');
+        e.target.textContent = 'x';
+        passwordInput.type = 'text';
+    } else {
+        e.target.classList.add('show');
+        e.target.textContent = '✓';
+        passwordInput.type = 'password';
+    }
+});
+</script>
+  
+</body>
+</html>
